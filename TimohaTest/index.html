@@ -1,0 +1,85 @@
+<!DOCTYPE html> <!--deklareerimine HTML5 keel-->
+<html lang="et">
+<head>
+    <!--veebilehe tehniline info-->
+    <meta charset="UTF-8">
+    <title>Veebirakenduste aluste tööd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--veebilehe sisu-->
+<header>
+    <h1>
+        Timoha
+    </h1>
+</header>
+
+<nav>
+ <ul>
+     <li>
+         <a href="index.html">Kodu</a>
+     </li>
+     <li>
+         <a href="tutvustus.html">Tutvustus</a>
+     </li>
+     <li>
+         <a href="lingid.html">Kasulikud lingid</a>
+     </li>
+     <li>
+         <a href="tood.html">Tehtud tööd</a>
+     </li>
+     <li>
+         <a href="meedia.html">Meedia</a>
+     </li>
+ </ul>
+</nav>
+<!--põhisisu-->
+<main>
+    <section id="Kast1">
+        <h2>
+            Tere tulemast!
+        </h2>
+        <p>See index leht mis on tehtus 1. Veebirakenduste tunnis!
+        </p>
+    </section>
+    <section id = "Kast2">
+        <h3>Põnev pilt</h3>
+        <div>
+            <img src="litenergy.png">
+        </div>
+    </section>
+</main>
+<!--jalus-->
+<footer>
+    Timoha leht &copy; 2026
+</footer>
+<div id="page-transition"></div>
+
+<script>
+
+    const transition = document.getElementById("page-transition");
+
+    document.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", function(event) {
+
+            const url = this.href;
+
+            if (url && !url.includes("#")) {
+
+                event.preventDefault();
+
+                transition.classList.add("active");
+
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 500);
+            }
+
+        });
+
+    });
+
+</script>
+</body>
+</html>

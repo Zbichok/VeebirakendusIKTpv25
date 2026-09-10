@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Timoha - Meedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Timoha</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Kodu</a>
+        </li>
+        <li><a href="tutvustus.html">Tutvustus</a></li>
+
+        <li><a href="lingid.html">Kasulikud lingid</a></li>
+        <li><a href="tood.html">Tehtud tööd</a>
+        </li>
+        <li><a href="meedia.html">Meedia</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div id="suurkast">
+
+        <section id="pildigalerii">
+            <h2>Pildigalerii</h2>
+
+            <img src="https://picsum.photos/300/300?random=1"
+                 alt="pilt 1"
+                 width="300"
+                 height="300"
+                 loading="lazy">
+
+            <img src="https://picsum.photos/300/300?random=2"
+                 alt="pilt 2"
+                 width="300"
+                 height="300"
+                 loading="lazy">
+
+            <img src="https://picsum.photos/300/300?random=3"
+                 alt="pilt 3"
+                 width="300"
+                 height="300"
+                 loading="lazy">
+
+            <img src="https://picsum.photos/300/300?random=4"
+                 alt="pilt 4"
+                 width="300"
+                 height="300"
+                 loading="lazy">
+
+            <img src="https://picsum.photos/300/300?random=5"
+                 alt="pilt 5"
+                 width="300"
+                 height="300"
+                 loading="lazy">
+
+            <img src="https://picsum.photos/300/300?random=6"
+                 alt="pilt 6"
+                 width="300"
+                 height="300"
+                 loading="lazy">
+        </section>
+
+        <section id="video">
+            <h2>Video</h2>
+
+            <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/OMN1U3bdjUM"
+                    title="Video">
+            </iframe>
+        </section>
+
+        <section id="kaart">
+            <h2>Kaart</h2>
+
+            <iframe
+                    src="https://www.google.com/maps?q=Tallinn,Estonia&output=embed"
+                    width="600"
+                    height="450"
+                    style="border:0;">
+            </iframe>
+        </section>
+
+        <section id="muusika">
+            <h2>Muusika</h2>
+
+            <iframe
+                    src="https://open.spotify.com/embed/track/3JdLb8ixDa67E3zKZaxo6N"
+                    width="100%"
+                    height="352">
+            </iframe>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    Timoha leht &copy; 2026
+</footer>
+<div id="page-transition"></div>
+
+<script>
+
+    const transition = document.getElementById("page-transition");
+
+    document.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", function(event) {
+
+            const url = this.href;
+
+            if (url && !url.includes("#")) {
+
+                event.preventDefault();
+
+                transition.classList.add("active");
+
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 500);
+            }
+
+        });
+
+    });
+
+</script>
+</body>
+</html>
