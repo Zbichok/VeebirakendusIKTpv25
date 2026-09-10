@@ -7,8 +7,8 @@
 </head>
 <body>
 <h1>Tabelid</h1>
-<h2>Lihtne tabel</h2>
-<table>
+<h2>Lihtnetabel</h2>
+<table id="lihtnetabel">
     <tr>
         <td>A</td>
         <td>B</td>
@@ -19,5 +19,25 @@
     </tr>
 </table>
 
+<h2>Tabel kus on ühendatud lahtrid</h2>
+<table id="keeruline1">
+    <tr>
+        <td colspan="2">A</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>D</td>
+    </tr>
+</table>
+<h2>vell uks tabel kus on uhendatud lahtrid</h2>
+<table id="keeruline2">
+    <tr>
+        <td rowspan="2" class="nimia">A</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>D</td>
+    </tr>
+</table>
 </body>
 </html>
