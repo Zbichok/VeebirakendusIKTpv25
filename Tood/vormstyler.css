@@ -1,0 +1,24 @@
+form {
+    text-align:left;
+    border-radius: 30px;
+}
+table, td {
+    border-collapse: collapse;
+    width: 30%;
+    padding: 1%;
+    border-radius: 30px;
+    background-color: mintcream;
+}
+input[type=text]{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 1%;
+}
+label{
+    font-weight: bold;
+
+}
+input[type=radio]:hover{
+    background-color: crimson;
+    font-size: 20pt;
+}
