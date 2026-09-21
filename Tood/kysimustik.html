@@ -7,10 +7,62 @@
 <body>
 <h1>Muusika küsimustik</h1>
 <div>HTML vormid ja nupud</div>
-<form action="#"></form>
+<form action="#">
 <!-- c + tab komentaar -->
 <!-- Tekstkast -->
 <label for="nimi">Nimi:</label>
 <input type="text" id="nimi" placeholder="Timoha">
+<br>
+<!-- ripploend või rippmenuüü -->
+<label for="stiil">Vali meeldivaim muusikastiil:</label>
+<select name="stiil" id="stiil">
+<option value="vali">vali..</option>
+<option value="hiphop">hiphop</option>
+<option value="rock">rock</option>
+<option value="kantri">kantri</option>
+<option value="jazz">jazz</option>
+<option value="metal">metal</option>
+</select>
+    <br>
+    <!-- radio nupud -uks valik mitmest -->
+    <label for="">
+        <strong
+        Kuidas sa muusikat peamiselt kuulad?
+        ></strong>
+        <br>
+        </label>
+    <input type="radio" name="platvorm" id="Spotify">
+    <label for="Spotify">Spotify</label>
+    <br>
+    <input type="radio" name="platvorm2" id="raadio">
+    <label for="raadio">Spotify</label>
+    <br>
+    <input type="radio" name="platvorm3" id="vinüülplaat">
+    <label for="vinüülplaat">vinüülplaat</label>
+
+
+    <!-- checkbox -->
+    <fieldset>
+        <legend>Tee oma valikud - lemmik ansambel</legend>
+        <input type="checkbox" name="lemmikud" id="tameimpala">
+        <label for="tameimpala">tameimpala</label>
+        <br>
+        <input type="checkbox" name="lemmikud" id="theweekend">
+        <label for="theweekend">theweekend</label>
+        <br>
+        <input type="checkbox" name="lemmikud" id="Rich Amiri">
+        <label for="Rich Amiri">Rich Amiri</label>
+        <br>
+        <input type="checkbox" name="lemmikud" id="MajklDzordan">
+        <label for="MajklDzordan">MajklDzordan</label>
+        <br>
+    </fieldset>
+    <!-- range - vahemik -->
+    <label for="tund">
+        mitu tundi päevas sa kuulad muusikat?
+    </label>
+    <br>
+    0<input type="range" id="tund" min="0" max="24" value="0">24
+</form>
 </body>
 </html>
