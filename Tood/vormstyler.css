@@ -31,3 +31,7 @@ input[type="radio"] {
 input[type="checkbox"] {
     accent-color: crimson;
 }
+input:hover,
+select:hover {
+    background-color: lightblue;
+}
