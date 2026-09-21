@@ -22,13 +22,13 @@ table#keeruline2{
 table#keeruline2 td{
     vertical-align: top;
     border: 1px solid darkred;
-    background-color: #8eecab;
+    background-color: gold;
 }
 td{
     border: 1px solid black;
 }
 .nimiA{
-    background-color: aqua;
+    background-color: crimson;
 }
 
 table#hindeline{

@@ -3,6 +3,11 @@ form {
     text-align:left;
     border-radius: 30px;
 }
+h1 {
+    font-family: Georgia, serif;
+    color: crimson;
+}
+
 table, td {
     border-collapse: collapse;
     width: 30%;
