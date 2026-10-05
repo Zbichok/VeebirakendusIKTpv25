@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmeerimine Kusitlus</title>
+    <link rel="stylesheet" href="KusitlusStyle.css">
+    <script src="../jk/KusitlusScript.js"></script>
+</head>
+<body>
+<h1>Programeerimine Kusitlus</h1>
+<form id="kysimustikForm" action="#">
+    <table>
+        <tr>
+            <th>Küsimus</th>
+            <th>Vastus</th>
+        </tr>
+
+        <tr>
+            <td>1. Milliseid programmeerimiskeeli sa tead?</td>
+            <td>
+                <input type="checkbox" name="tead" id="JavaScript" onchange="KeeledValik()">
+                <label for="JavaScript">JavaScript</label>
+                <br>
+                <input type="checkbox" name="tead" id="Python" onchange="KeeledValik()">
+                <label for="Python">Python</label>
+                <br>
+                <input type="checkbox" name="tead" id="Java" onchange="KeeledValik()">
+                <label for="Java">Java</label>
+                <br>
+                <input type="checkbox" name="tead" id="C#" onchange="KeeledValik()">
+                <label for="C#">C#</label>
+                <br>
+                <input type="checkbox" name="tead" id="PHP" onchange="KeeledValik()">
+                <label for="PHP">PHP</label>
+                <div id="v1" class="vastus"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>2. Mida arvad programmeerimise õppimisest?</td>
+            <td>
+                <textarea id="arvamus" placeholder="Kirjuta Siia" oninput="arvamusValik()"></textarea>
+                <div id="v2" class="vastus"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>3. Mitu tundi nädalas tegeled programmeerimisega?</td>
+            <td>
+                <input type="number" id="tunnid" min="0" max="70" placeholder="Max: 70" oninput="tunnidValik()">
+                <div id="v3" class="vastus"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>4. Kas sulle meeldib programmeerida?</td>
+            <td>
+                <input type="radio" name="meeldib" id="jah" value="../images/smile.png" onclick="meeldibValik()">
+                <label for="jah">Jah</label>
+                <br>
+                <input type="radio" name="meeldib" id="ei" value="../images/neutral.png" onclick="meeldibValik()">
+                <label for="ei">Ei</label>
+                <div id="v4" class="vastus"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>5. Milliseid programmeerimisega seotud tööriistu oskad nimetada?</td>
+            <td>
+                <input type="text" id="tooriistad" placeholder="Visual Studio Code i t.d-" oninput="tooriistadValik()">
+                <div id="v5" class="vastus"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>6. Millist programmeerimiskeelt sooviksid kõige rohkem õppida?</td>
+            <td>
+                <select id="soov" onchange="soovValik()">
+                    <option>Vali</option>
+                    <option>JavaScript</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                    <option>C#</option>
+                    <option>PHP</option>
+                    <option>C++</option>
+                </select>
+                <div id="v6" class="vastus"></div>
+            </td>
+        </tr>
+    </table>
+
+    <div style="max-width:900px; margin:auto">
+        <button type="button" onclick="saada()">Saada</button>
+        <button type="button" onclick="puhasta()">Puhasta</button>
+    </div>
+    <div id="tulemus"></div>
+</form>
+</body>
+</html>
