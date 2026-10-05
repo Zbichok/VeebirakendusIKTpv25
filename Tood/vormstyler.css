@@ -1,3 +1,4 @@
+
 form {
     font-family: "Courier New", monospace;
     text-align:left;
@@ -5,15 +6,16 @@ form {
 }
 h1 {
     font-family: Georgia, serif;
-    color: crimson;
+    color: green;
 }
 
 table, td {
     border-collapse: collapse;
-    width: 30%;
+    width: 40%;
     padding: 1%;
     border-radius: 30px;
     background-color: mintcream;
+    border: 1px solid green;
 }
 input[type="text"] {
     color: dodgerblue;
@@ -28,7 +30,6 @@ input[type="tel"] {
 
 label{
     font-weight: bold;
-
 }
 input[type="radio"] {
     accent-color: red;
@@ -39,4 +40,20 @@ input[type="checkbox"] {
 input:hover,
 select:hover {
     background-color: lightblue;
+}
+
+input[type="radio"][name="platvorm"] {
+    display: none;
+}
+
+input[type="radio"][name="platvorm"] + label img {
+    border: 3px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+input[type="radio"][name="platvorm"]:checked + label img {
+    border-color: lawngreen;
+    opacity: 1;
 }
