@@ -1,28 +1,68 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8">
   <title>Map Area</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin: 30px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .tekst {
+      margin: 30px auto;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .tekst img {
+      width: 250px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
-<h1>Map Area Kasutamine</h1>
-<h2>Tuleb klikida juksed, silm, nina, touchpad, klaviatuur</h2>
-<img src="arvutipilt.jpg" alt="See on arvuti pilt" usemap="#arvuti">
+
+<h1>Map Area kasutamine</h1>
+<h2>Klõpsa juustel, silmal, ninal, monitoril või klaviatuuril.</h2>
+
+<img src="arvutipilt.jpg" alt="Arvuti pilt" usemap="#arvuti">
+
 <map name="arvuti">
-  <area shape="circle"  coords="331, 368, 30" href="eye.html">
-
-  <area shape="rect"  coords="168, 511, 385, 570" href="monitor.html" alt="Monitor">
-
-  <area shape="rect"  coords="500, 52, 178, 222" href="juksed.html" alt="Juksed">
-
-  <area shape="circle" coords="414, 432, 25" href="nina.html" alt="Nina">
-
-  <area shape="rect"  coords="561, 578, 411, 629" href="klaviatuur.html">
-
+  <area shape="circle" coords="331,368,30" href="eye.html" alt="Silm">
+  <area shape="rect" coords="168,511,385,570" href="monitor.html" alt="Monitor">
+  <area shape="rect" coords="178,52,500,222" href="juksed.html" alt="Juuksed">
+  <area shape="circle" coords="414,432,25" href="nina.html" alt="Nina">
+  <area shape="rect" coords="411,578,561,629" href="klaviatuur.html" alt="Klaviatuur">
 </map>
-<div>Minu nina on väike.
-  Ma tunnen ninaga erinevaid lõhnu.
-  Ma hoolitsen oma nina eest.</div>
-<div> <img src="nina.jpg"></div>
+
+<div class="tekst">
+  <h3>Minu nina</h3>
+
+  <p>
+    Minu nina on väike.<br>
+    Ma tunnen ninaga erinevaid lõhnu.<br>
+    Ma hoolitsen oma nina eest.
+  </p>
+
+  <img src="nina.jpg" alt="Nina">
+</div>
+
 </body>
 </html>
+

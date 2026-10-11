@@ -1,28 +1,67 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8">
   <title>Map Area</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin: 30px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .luuletus {
+      margin-top: 30px;
+    }
+
+    .luuletus img {
+      width: 300px;
+      border-radius: 8px;
+    }
+
+    .luuletus p {
+      line-height: 1.6;
+      font-style: italic;
+    }
+  </style>
 </head>
+
 <body>
-<h1>Map Area Kasutamine</h1>
-<h2>Tuleb klikida juksed, silm, nina, touchpad, klaviatuur</h2>
-<img src="arvutipilt.jpg" alt="See on arvuti pilt" usemap="#arvuti">
+
+<h1>Map Area kasutamine</h1>
+<h2>Klõpsa juustel, silmal, ninal, monitoril või klaviatuuril.</h2>
+
+<img src="arvutipilt.jpg" alt="Arvuti pilt" usemap="#arvuti">
+
 <map name="arvuti">
-  <area shape="circle"  coords="331, 368, 30" href="eye.html">
-
-  <area shape="rect"  coords="168, 511, 385, 570" href="monitor.html" alt="Monitor">
-
-  <area shape="rect"  coords="500, 52, 178, 222" href="juksed.html" alt="Juksed">
-
-  <area shape="circle" coords="414, 432, 25" href="nina.html" alt="Nina">
-
-  <area shape="rect"  coords="561, 578, 411, 629" href="klaviatuur.html">
-
+  <area shape="circle" coords="331,368,30" href="eye.html" alt="Silm">
+  <area shape="rect" coords="168,511,385,570" href="monitor.html" alt="Monitor">
+  <area shape="rect" coords="500,52,678,222" href="juksed.html" alt="Juuksed">
+  <area shape="circle" coords="414,432,25" href="nina.html" alt="Nina">
+  <area shape="rect" coords="411,578,561,629" href="klaviatuur.html" alt="Klaviatuur">
 </map>
-<div>Minu juuksed on pruunid ja pikad.
-  Ma hoolitsen oma juuste eest ja pesen neid regulaarselt.
-  Mulle meeldivad minu juuksed, sest need on ilusad.</div>
-<div><img src="juksed.jpg"></div>
+
+<div class="luuletus">
+  <h3>Juuksed</h3>
+  <p>
+    Juuksed tuules õrnalt lendavad,<br>
+    nagu lained päikese all säravad.
+  </p>
+  <img src="juksed.jpg" alt="Juuksed">
+</div>
+
 </body>
 </html>
+
