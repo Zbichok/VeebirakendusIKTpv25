@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmeerimise küsimustik</title>
+    <link rel="stylesheet" href="KusitlusStyle.css">
+    <script src="../jk/KusitlusScript.js"></script>
+</head>
+<body>
+<h1>Programmeerimise küsimustik</h1>
+<form action="#">
+    <table>
+        <tr>
+            <td><strong>Küsimus</strong></td>
+            <td colspan="2"><strong>Vastus</strong></td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Milliseid programmeerimiskeeli sa tead?</legend>
+                    <input type="checkbox" name="lemmikud" id="csharp" value="csharp" onchange="teadmisedCheck()">
+                    <label for="csharp">C#</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="js" value="js" onchange="teadmisedCheck()">
+                    <label for="js">JavaScript</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="python" value="python" onchange="teadmisedCheck()">
+                    <label for="python">Python</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="php" value="php" onchange="teadmisedCheck()">
+                    <label for="php">PHP</label>
+                </fieldset>
+            </td>
+            <td colspan="2">
+                <div id="vastus1">Sa tead:</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="arvamus">Mida arvad programmeerimise õppimisest?</label>
+            </td>
+            <td>
+                <input type="text" id="arvamus" placeholder="Ma arvan et.." oninput="arvamuss()">
+            </td>
+            <td>
+                <div id="vastus2">Sinu arvamus: </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="tund">
+                    Mitu tundi nädalas tegeled programmeerimisega?
+                </label>
+            </td>
+
+            <td>0<input type="range" id="tund" min="0" max="168" value="24" onchange="rangeValik()">168</td>
+            <td>
+                <div id="vastus3">Sa tegeled programmeerimisega:</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Kas sulle meeldib programmeerida?
+            </td>
+            <td>
+                <br>
+                <input type="radio" name="valiku" id="jahh" value="Jah" onclick="meeldib()">
+                <label for="jahh">Jah</label>
+                <br>
+                <input type="radio" name="valiku" id="eii" value="Ei" onclick="meeldib()">
+                <label for="eii">Ei</label>
+                <br>
+            </td>
+            <td>
+                <div id="vastus4"></div>
+                <br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="progTooristu">Mida arvad programmeerimise õppimisest?</label>
+            </td>
+            <td>
+                <input type="text" id="progTooristu" placeholder="Ma arvan et.." oninput="arvamus2()">
+            </td>
+            <td>
+                <div id="vastus5">Sinu nimetatud tööriistad: </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="soovitus">Millist programmeerimiskeelt sooviksid kõige rohkem õppida?</label>
+            </td>
+            <td>
+                <select name="progSoovitus" id="soovitus" onchange="soovitusOpi()">
+                    <option value="vali">vali...</option>
+                    <option value="csharp">C#</option>
+                    <option value="python">Python</option>
+                    <option value="java">java</option>
+                    <option value="cpp">C++</option>
+                    <option value="c">C</option>
+                    <option value="typescript">TypeScript</option>
+                </select>
+            </td>
+            <td>
+                <div id="vastus6" >Sinu valik: </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="button" id="submits" value = "Saada" onclick = "naitaKoikee()">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="reset" id="resets" onclick= "puhastaa()">
+            </td>
+        </tr>
+
+
+    </table>
+    <br>
+</form>
+</body>
+</html>
