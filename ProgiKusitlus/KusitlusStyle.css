@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; background: whitesmoke; padding: 20px; }
+
+table { border-collapse: collapse; width: 100%; max-width: 900px; margin: auto; background: white; }
+
+input[type=text], input[type=number], textarea, select {
+    padding: 6px; border: 1px solid grey; border-radius: 4px; width: 90%;
+}

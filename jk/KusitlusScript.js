@@ -48,6 +48,7 @@ function rangeValik() {
     return tund.value;
 }
 
+
 function meeldib() {
     let vastus4 = document.getElementById("vastus4");
     let piltVastus = document.getElementById("piltVastus");
@@ -58,18 +59,20 @@ function meeldib() {
 
     if (jah.checked) {
         valik6 = "Programmeerimine meeldib!";
-        piltVastus.src = "Images/smile.png";
-    } else if (ei.checked) {
+        piltVastus.src = "../Images/smile.png";
+        piltVastus.style.display = "block";
+    }
+    else if (ei.checked) {
         valik6 = "Programmeerimine ei meeldi.";
-        piltVastus.src = "Images/Kurb.png";
-    } else {
-        valik6 = "Palun tee oma valik!";
+        piltVastus.src = "../Images/Kurb.png";
+        piltVastus.style.display = "block";
     }
 
     vastus4.innerHTML = valik6;
 
     return valik6;
 }
+
 
 function arvamus2() {
     let vastus5 = document.getElementById("vastus5");
