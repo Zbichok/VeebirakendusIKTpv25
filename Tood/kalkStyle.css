@@ -1,0 +1,25 @@
+section#yld {
+    display: flex;
+    gap: 10px;
+}
+
+#kalk1, #kalk2, #kalk3 {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: mintcream;
+    font: 13px Arial, sans-serif;
+}
+
+#kalk1 {
+    text-align: center;
+}
+
+#smile {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    left: 2%;
+}

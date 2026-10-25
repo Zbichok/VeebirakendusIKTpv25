@@ -11,7 +11,7 @@ function arvuta_suurus(){
     for (let i = 0; i < valik.length; i++){
         if (valik[i].checked){
             if (valik[i].value == "pindala"){
-
+                
                 for (let u = 0; u < c.length; u++){
                     b[u].hidden = false
                     c[u].hidden = true
@@ -45,7 +45,7 @@ function arvuta_suurus(){
                     a[0].innerHTML = "A: "
                     b[0].innerHTML = "B: "
                     c[0].innerHTML = "C: "
-
+                    
                     vastus.innerHTML = "Kolmnurgi pindala on: " + (a[1].value * b[1].value) / 2 + " meetrit²"
                 }
                 else{
@@ -57,20 +57,20 @@ function arvuta_suurus(){
                 }
             }
             else if (valik[i].value == "ruumala"){
-
+                
                 for (let u = 0; u < c.length; u++){
                     a[u].hidden = false
-                    b[u].hidden = false
+                    b[u].hidden = false                    
                     c[u].hidden = false
                 }
 
                 a[0].innerHTML = "A: "
                 b[0].innerHTML = "B: "
                 c[0].innerHTML = "C: "
-
+                
                 if(kujund.selectedIndex === 1){
                     for (let u = 0; u < c.length; u++){
-                        c[u].hidden = true
+                    c[u].hidden = true
                     }
                     a[0].innerHTML = "r: "
                     b[0].innerHTML = "H: "
@@ -79,16 +79,16 @@ function arvuta_suurus(){
                 }
                 else if (kujund.selectedIndex === 2){
                     for (let u = 0; u < c.length; u++){
-                        a[u].hidden = false
-                        b[u].hidden = true
-                        c[u].hidden = true
-                    }
-                    vastus.innerHTML = "Ruutu ruumala on: " + a[1].value ** 3 + " meetrit³"
+                    a[u].hidden = false
+                    b[u].hidden = true                    
+                    c[u].hidden = true
+                }
+                vastus.innerHTML = "Ruutu ruumala on: " + a[1].value ** 3 + " meetrit³"
                 }
                 else if(kujund.selectedIndex === 3){
                     for (let u = 0; u < c.length; u++){
                         a[u].hidden = false
-                        b[u].hidden = false
+                        b[u].hidden = false                    
                         c[u].hidden = false
                     }
 
@@ -100,9 +100,9 @@ function arvuta_suurus(){
                 }
                 else{
                     for (let u = 0; u < c.length; u++){
-                        a[u].hidden = false
-                        b[u].hidden = false
-                        c[u].hidden = false
+                    a[u].hidden = false
+                    b[u].hidden = false                    
+                    c[u].hidden = false
                     }
 
                     a[0].innerHTML = "A: "
