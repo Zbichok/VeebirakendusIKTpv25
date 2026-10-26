@@ -4,26 +4,27 @@ let raamat = {
     aasta: 2005,
     zanr: "romaan",
 
+    //meetodid
     kirjeldus() {
         return this.pealkiri + " (" + this.autor + ", " + this.aasta + ")";
     },
 
     kuvaKirjeldus() {
-        document.getElementById("raamatuInfo").innerHTML =
-            "Raamat: " + this.kirjeldus();
+        console.log("Raamat: " + this.kirjeldus());
     },
 
     muudaAastat(uusAasta) {
         this.aasta = uusAasta;
-        this.kuvaKirjeldus();
     }
 };
 
 raamat.kuvaKirjeldus();
 raamat.muudaAastat(1933);
+raamat.kuvaKirjeldus();
 
 
 let raamatukogu = {
+    //omadused
     raamatud: [
         { pealkiri: "Kniga", autor: "Bread Pitt", aasta: 2005 },
         { pealkiri: "1984", autor: "George Orwell", aasta: 1949 },
@@ -32,62 +33,46 @@ let raamatukogu = {
         { pealkiri: "Sipsik", autor: "Pisatel", aasta: 2007 }
     ],
 
+    //meetodid
     kuvaRaamatud() {
-        let tulemus = "";
-
-        this.raamatud.forEach((r, i) => {
-            tulemus +=
-                (i + 1) + ". " +
-                r.pealkiri + " - " +
-                r.autor + " (" +
-                r.aasta + ")<br>";
+        this.raamatud.forEach((r) => {
+            console.log(`
+        Pealkiri: ${r.pealkiri},
+        Autor: ${r.autor},
+        Aasta: ${r.aasta}
+      `);
         });
-
-        document.getElementById("raamatud").innerHTML = tulemus;
     },
 
     lisaRaamat(pealkiri, autor, aasta) {
-        this.raamatud.push({
-            pealkiri: pealkiri,
-            autor: autor,
-            aasta: aasta
-        });
-
-        this.kuvaRaamatud();
+        this.raamatud.push({ pealkiri: pealkiri, autor: autor, aasta: aasta });
     },
 
     kuvaKoguarv() {
-        document.getElementById("statistika").innerHTML +=
-            "Raamatuid kokku: " + this.raamatud.length + "<br>";
+        console.log("Raamatuid kokku: " + this.raamatud.length);
     },
 
     mituParast2000() {
         let arv = 0;
-
-        this.raamatud.forEach(r => {
+        this.raamatud.forEach((r) => {
             if (r.aasta > 2000) {
                 arv++;
             }
         });
-
-        document.getElementById("statistika").innerHTML +=
-            "Pärast 2000. aastat ilmunud raamatuid: " + arv + "<br>";
+        console.log("Pärast 2000. aastat ilmunud raamatuid: " + arv);
     },
 
     otsiAutori(autor) {
-        let leitud = this.raamatud.filter(r => r.autor === autor);
-
-        let tulemus = "Autori " + autor + " raamatud:<br>";
-
-        leitud.forEach(r => {
-            tulemus += "- " + r.pealkiri + " (" + r.aasta + ")<br>";
+        let leitud = false;
+        this.raamatud.forEach((r) => {
+            if (r.autor === autor) {
+                console.log(r.pealkiri + " (" + r.aasta + ")");
+                leitud = true;
+            }
         });
-
-        if (leitud.length === 0) {
-            tulemus += "Raamatuid ei leitud.<br>";
+        if (leitud === false) {
+            console.log("Raamatuid ei leitud.");
         }
-
-        document.getElementById("statistika").innerHTML += tulemus;
     }
 };
 
@@ -95,6 +80,10 @@ raamatukogu.kuvaRaamatud();
 
 raamatukogu.lisaRaamat("Päikesepoeg", "Mari Saat", 2015);
 
+raamatukogu.raamatud.unshift({ pealkiri: "Pipi", autor: "Astrid Lindgren", aasta: 1945 });
+
+raamatukogu.raamatud.splice(2, 1);
+
 raamatukogu.kuvaKoguarv();
 raamatukogu.mituParast2000();
-raamatukogu.otsiAutori("Andrus Kivirähk");
+raamatukogu.otsiAutori("Mari Saat");
