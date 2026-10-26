@@ -1,29 +1,27 @@
 let raamat = {
-    // omadused
     pealkiri: "Kniga",
     autor: "Bread Pitt",
     aasta: 2005,
     zanr: "romaan",
 
-    // meetodid
     kirjeldus() {
         return this.pealkiri + " (" + this.autor + ", " + this.aasta + ")";
     },
 
     kuvaKirjeldus() {
-        console.log("Raamat: " + this.kirjeldus());
+        document.getElementById("raamatuInfo").innerHTML =
+            "Raamat: " + this.kirjeldus();
     },
 
     muudaAastat(uusAasta) {
-        console.log("Vana aasta: " + this.aasta);
         this.aasta = uusAasta;
-        console.log("Uus aasta: " + this.aasta);
+        this.kuvaKirjeldus();
     }
 };
 
 raamat.kuvaKirjeldus();
 raamat.muudaAastat(1933);
-raamat.kuvaKirjeldus();
+
 
 let raamatukogu = {
     raamatud: [
@@ -35,41 +33,68 @@ let raamatukogu = {
     ],
 
     kuvaRaamatud() {
-        console.log("--- Raamatukogu raamatud ---");
+        let tulemus = "";
+
         this.raamatud.forEach((r, i) => {
-            console.log((i + 1) + ". " + r.pealkiri + " - " + r.autor + " (" + r.aasta + ")");
+            tulemus +=
+                (i + 1) + ". " +
+                r.pealkiri + " - " +
+                r.autor + " (" +
+                r.aasta + ")<br>";
         });
+
+        document.getElementById("raamatud").innerHTML = tulemus;
     },
 
     lisaRaamat(pealkiri, autor, aasta) {
-        this.raamatud.push({ pealkiri: pealkiri, autor: autor, aasta: aasta });
-        console.log('Lisatud: "' + pealkiri + '"');
+        this.raamatud.push({
+            pealkiri: pealkiri,
+            autor: autor,
+            aasta: aasta
+        });
+
+        this.kuvaRaamatud();
     },
 
     kuvaKoguarv() {
-        console.log("Raamatuid kokku: " + this.raamatud.length);
+        document.getElementById("statistika").innerHTML +=
+            "Raamatuid kokku: " + this.raamatud.length + "<br>";
     },
 
     mituParast2000() {
         let arv = 0;
+
         this.raamatud.forEach(r => {
             if (r.aasta > 2000) {
                 arv++;
             }
         });
-        console.log("Pärast 2000. aastat ilmunud raamatuid: " + arv);
+
+        document.getElementById("statistika").innerHTML +=
+            "Pärast 2000. aastat ilmunud raamatuid: " + arv + "<br>";
     },
 
     otsiAutori(autor) {
         let leitud = this.raamatud.filter(r => r.autor === autor);
-        console.log("Autori " + autor + " raamatud:");
-        leitud.forEach(r => console.log(" - " + r.pealkiri + " (" + r.aasta + ")"));
+
+        let tulemus = "Autori " + autor + " raamatud:<br>";
+
+        leitud.forEach(r => {
+            tulemus += "- " + r.pealkiri + " (" + r.aasta + ")<br>";
+        });
+
+        if (leitud.length === 0) {
+            tulemus += "Raamatuid ei leitud.<br>";
+        }
+
+        document.getElementById("statistika").innerHTML += tulemus;
     }
 };
 
 raamatukogu.kuvaRaamatud();
+
 raamatukogu.lisaRaamat("Päikesepoeg", "Mari Saat", 2015);
-raamatukogu.kuvaRaamatud();
+
 raamatukogu.kuvaKoguarv();
 raamatukogu.mituParast2000();
 raamatukogu.otsiAutori("Andrus Kivirähk");
