@@ -4,7 +4,6 @@ let raamat = {
     aasta: 2005,
     zanr: "romaan",
 
-    //meetodid
     kirjeldus() {
         return this.pealkiri + " (" + this.autor + ", " + this.aasta + ")";
     },
@@ -24,7 +23,6 @@ raamat.kuvaKirjeldus();
 
 
 let raamatukogu = {
-    //omadused
     raamatud: [
         { pealkiri: "Kniga", autor: "Bread Pitt", aasta: 2005 },
         { pealkiri: "1984", autor: "George Orwell", aasta: 1949 },
