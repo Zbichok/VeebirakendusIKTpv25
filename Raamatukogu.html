@@ -7,6 +7,11 @@
 <body>
 
 <h1>Raamatukogu</h1>
+
+<!-- Otsingu väli ja nupp -->
+<input type="text" id="autoriSisend" placeholder="Sisesta autori nimi">
+<button id="otsiNupp">Otsi autorit</button>
+
 <pre id="valjund"></pre>
 
 <script>
@@ -18,6 +23,18 @@
 </script>
 
 <script src="jk/SuntaksStruktuur.js"></script>
+
+<script>
+    // Nupuvajutus käivitab otsingu
+    document.getElementById("otsiNupp").addEventListener("click", function () {
+        let autor = document.getElementById("autoriSisend").value;
+
+        // Tühjendab eelmise tulemuse
+        document.getElementById("valjund").textContent = "";
+
+        raamatukogu.otsiAutori(autor);
+    });
+</script>
 
 </body>
 </html>
