@@ -33,7 +33,6 @@ let raamatukogu = {
         { pealkiri: "Sipsik", autor: "Pisatel", aasta: 2007 }
     ],
 
-    //meetodid
     kuvaRaamatud() {
         this.raamatud.forEach((r) => {
             console.log(`
