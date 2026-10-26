@@ -7,6 +7,15 @@
 <body>
 
 <h1>Raamatukogu</h1>
+<pre id="valjund"></pre>
+
+<script>
+    let vanaLog = console.log;
+    console.log = function(tekst) {
+        document.getElementById("valjund").textContent += tekst + "\n";
+        vanaLog(tekst);
+    };
+</script>
 
 <script src="jk/SuntaksStruktuur.js"></script>
 
