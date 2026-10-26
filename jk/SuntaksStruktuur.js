@@ -98,12 +98,12 @@ Aasta: ${r.aasta}
 raamatukogu.kuvaRaamatud();
 
 // Lisab uue raamatu
-raamatukogu.lisaRaamat("Päikesepoeg", "Mari Saat", 2015);
+raamatukogu.lisaRaamat("Krutajakniga", "Dzonatan depp", 2015);
 
 // Lisab raamatu nimekirja algusesse
 raamatukogu.raamatud.unshift({
-    pealkiri: "Pipi",
-    autor: "Astrid Lindgren",
+    pealkiri: "MegaKniga",
+    autor: "Majkl Dzordan",
     aasta: 1945
 });
 
@@ -117,4 +117,4 @@ raamatukogu.kuvaKoguarv();
 raamatukogu.mituParast2000();
 
 // Otsib Mari Saadi raamatut
-raamatukogu.otsiAutori("Mari Saat");
+raamatukogu.otsiAutori("Majkl Dzordan");
