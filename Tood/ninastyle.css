@@ -16,10 +16,8 @@ h2 {
 
 .tekst {
     margin-top: 30px;
-    margin-left: 0;
-    max-width: 500px;
-    line-height: 1.6;
     text-align: left;
+    margin-left: 29%;
 }
 
 .tekst img {
