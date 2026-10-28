@@ -1,32 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    text-align: center;
-    margin: 30px;
+.sisu {
+    width: fit-content;
+    margin: 0 auto;
 }
 
-h1 {
-    color: #333;
-}
-
-h2 {
-    font-size: 18px;
-    color: #666;
-}
-
-.luuletus {
-    margin-top: 30px;
-    text-align: left;
-    margin-left: 29%;
-}
-
-.luuletus img {
-    width: 300px;
-    border-radius: 8px;
+.sisu > img {
     display: block;
 }
 
-.luuletus p {
-    line-height: 1.6;
-    font-style: italic;
+.luuletus {
+    text-align: right;
+}
+
+.luuletus img {
+    display: block;
+    margin-left: auto;
 }

@@ -1,27 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    text-align: center;
-    margin: 30px;
+.sisu {
+    width: 700px;         /* новая ширина всего блока */
+    margin: 0 auto;
 }
 
-h1 {
-    color: #333;
+.sisu > img {
+    display: block;
+    width: 100%;          /* фото занимает всю ширину .sisu */
+    height: auto;         /* пропорции сохраняются */
 }
-
-h2 {
-    font-size: 18px;
-    color: #666;
-}
-
 .tekst {
-    margin-top: 30px;
-    text-align: left;
-    margin-left: 29%;
+    text-align: right;    /* текст выровнен вправо */
 }
 
 .tekst img {
-    width: 250px;
-    border-radius: 8px;
-    margin-top: 10px;
+    display: block;
+    margin-left: auto;    /* картинка носа тоже вправо */
 }
