@@ -1,17 +1,29 @@
 .sisu {
-    width: fit-content;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
     margin: 0 auto;
 }
 
+
 .sisu > img {
     display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
 }
 
 .tekst {
-    text-align: right;
+    width: 300px;
+    text-align: left;
+    flex-shrink: 0;
 }
 
 .tekst img {
     display: block;
+    width: 200px;
+    height: auto;
     margin-left: auto;
 }
