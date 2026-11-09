@@ -1,0 +1,12 @@
+Canvas#Canvas {
+    background-color: red;
+    border-radius: 5px;
+    border: 2px black solid;
+    width: 300pt;
+    height: 300pt;
+}
+table{
+    position: absolute;
+    left: 320pt;
+    top: 58pt;
+}

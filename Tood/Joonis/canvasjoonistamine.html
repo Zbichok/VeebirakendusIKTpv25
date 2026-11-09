@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas joonistamine</title>
+  <link rel="stylesheet" href="CanvasStyle.css">
+<script src="canvasScript.js"></script>
+</head>
+<body>
+<h1>Joonisturakenuds Canvas +JS</h1>
+<canvas id="Canvas" width="400" height="400"></canvas>
+
+<table>
+  <tr>
+    <td>
+      <input type="button" value="joon" onclick="joon()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Puhasta" onclick="puhasta()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Kolmnurk" onclick="kolmnurk()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Ristkylik" onclick="ristkylik()">
+      <label for="laius">Laius:</label>
+      <input type="number" id="laius" min="1" max="200" step="4" onchange="ristkylik()">
+      <label for="kyrgus">Kygrus:</label>
+      <input type="number" id="kyrgus" min="1" max="200" step="4" onchange="ristkylik()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Ring" onclick="ring()">
+      <label for="raadius">Raadius:</label>
+      <input type="number" id="raadius" min="1" max="50" step="2" onchange="ring()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Pilt" onclick="pilt()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Auto" onclick="Obshivka()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Ratas1" onclick="Wheels1()">
+      <input type="button" value="Ratas2" onclick="Wheels2()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Esituled" onclick="Fari()">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="button" value="Esiklaas" onclick="Esiklaas()">
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
