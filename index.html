@@ -1,13 +1,51 @@
-<!DOCTYPE html> <!--deklareerimine HTML5 keel-->
+<!DOCTYPE html>
 <html lang="et">
 <head>
-    <!--veebilehe tehniline info-->
+
     <meta charset="UTF-8">
     <title>Veebirakenduste aluste tööd</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#kuva').hide();
+
+            $('#peida').click(function() {
+                $('#Kast1').hide(500);
+                $(this).hide();
+                $('#kuva').show();
+            });
+            //Liiguta hiirekursor navigatsioonimenüü kohale ja tekst muutub suuremaks.
+            $('nav a').on('mouseenter', function() {
+                $(this).css('font-size', '22px');
+            });
+            $('nav a').on('mouseleave', function() {
+                $(this).css('font-size', '16px');
+            });
+
+            $('#kuva').click(function() {
+                $('#Kast1').show(500);
+                $(this).hide();
+                $('#peida').show();
+            });
+        });
+        function start(){
+            $('#Kast1').draggable();
+            $('#pilt').draggable();
+            $('#Kast1').bind("drag", xyKoordinat);
+            $('#pilt').bind("drag", xyKoordinat);
+        }
+        function xyKoordinat(event, ui){
+            let koht=ui.offset;
+            $('#vastus').html('x: '+koht.left+ '//// y: '+koht.top);
+        }
+    </script>
 </head>
-<body>
-<!--veebilehe sisu-->
+<body onload="start()">
+
 <header>
     <h1>
         Timoha
@@ -15,26 +53,38 @@
 </header>
 
 <nav>
- <ul>
-     <li>
-         <a href="index.html">Kodu</a>
-     </li>
-     <li>
-         <a href="tutvustus.html">Tutvustus</a>
-     </li>
-     <li>
-         <a href="lingid.html">Kasulikud lingid</a>
-     </li>
-     <li>
-         <a href="tood.html">Tehtud tööd</a>
-     </li>
-     <li>
-         <a href="meedia.html">Meedia</a>
-     </li>
- </ul>
+    <ul>
+        <li>
+            <a href="index.html">Kodu</a>
+        </li>
+        <li>
+            <a href="tutvustus.html">Tutvustus</a>
+        </li>
+        <li>
+            <a href="lingid.html">Kasulikud lingid</a>
+        </li>
+        <li>
+            <a href="tood.html">Tehtud tööd</a>
+        </li>
+        <li>
+            <a href="meedia.html">Meedia</a>
+        </li>
+    </ul>
 </nav>
-<!--põhisisu-->
+
 <main>
+    <input type="button" value="===>" id="paremale"
+           onclick="$('h1').animate({left: '500px'}, 1000);
+            $(this).hide();
+            $('#vasakule').show();">
+    <input type="button" value="<===" id="vasakule" style="display:none"
+           onclick="$('h1').animate({left: '0px'}, 1000);
+          $(this).hide();
+          $('#paremale').show();">
+
+    <input type="button" value="Peida" id="peida">
+    <input type="button" value="Kuva" id="kuva">
+
     <section id="Kast1">
         <h2>
             Tere tulemast!
@@ -45,11 +95,12 @@
     <section id = "Kast2">
         <h3>Põnev pilt</h3>
         <div>
-            <img src="litenergy.png">
+            <img src="litenergy.png" id="pilt">
         </div>
+        <div id="vastus"></div>
     </section>
 </main>
-<!--jalus-->
+
 <footer>
     Timoha leht &copy; 2026
 </footer>

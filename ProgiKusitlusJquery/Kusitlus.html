@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmeerimise küsimustik</title>
+    <link rel="stylesheet" href="KusitlusStyle.css">
+
+    <!-- jQuery peab olema enne teie enda skripti -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../jk/KusitlusScript.js"></script>
+</head>
+<body>
+<h1>Programmeerimise küsimustik</h1>
+<form action="#" id="kusitlus">
+    <table>
+        <tr>
+            <td><strong>Küsimus</strong></td>
+            <td colspan="2"><strong>Vastus</strong></td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Milliseid programmeerimiskeeli sa tead?</legend>
+                    <input type="checkbox" name="lemmikud" id="csharp" value="csharp" onchange="teadmisedCheck()">
+                    <label for="csharp">C#</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="js" value="js" onchange="teadmisedCheck()">
+                    <label for="js">JavaScript</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="python" value="python" onchange="teadmisedCheck()">
+                    <label for="python">Python</label>
+                    <br>
+                    <input type="checkbox" name="lemmikud" id="php" value="php" onchange="teadmisedCheck()">
+                    <label for="php">PHP</label>
+                </fieldset>
+                <span class="viga" id="viga1">Vali vähemalt üks keel!</span>
+            </td>
+            <td colspan="2">
+                <div id="vastus1">Sa tead:</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="arvamus">Mida arvad programmeerimise õppimisest?</label>
+                <br>
+                <span class="viga" id="viga2">Sisesta oma arvamus!</span>
+            </td>
+            <td>
+                <input type="text" id="arvamus" placeholder="Ma arvan et.." oninput="arvamuss()">
+            </td>
+            <td>
+                <div id="vastus2">Sinu arvamus: </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="tund">Mitu tundi nädalas tegeled programmeerimisega?</label>
+                <br>
+                <span class="viga" id="viga3">Sisesta arv vahemikus 0–168!</span>
+            </td>
+            <td>0<input type="range" id="tund" min="0" max="168" value="24" onchange="rangeValik()">168</td>
+            <td>
+                <div id="vastus3">Sa tegeled programmeerimisega:</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Kas sulle meeldib programmeerida?
+                <br>
+                <span class="viga" id="viga4">Vali Jah või Ei!</span>
+            </td>
+            <td>
+                <br>
+                <input type="radio" name="valiku" id="jahh" value="Jah" onclick="meeldib()">
+                <label for="jahh">Jah</label>
+                <br>
+                <input type="radio" name="valiku" id="eii" value="Ei" onclick="meeldib()">
+                <label for="eii">Ei</label>
+                <br>
+            </td>
+            <td>
+                <div id="vastus4"></div>
+                <img id="piltVastus" src="" width="100" style="display:none">
+                <br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="progTooristu">Milliseid programmeerimise tööriistu kasutad?</label>
+                <br>
+                <span class="viga" id="viga5">Kasuta ainult tähti!</span>
+            </td>
+            <td>
+                <input type="text" id="progTooristu" placeholder="Ma kasutan.." oninput="arvamus2()">
+            </td>
+            <td>
+                <div id="vastus5">Sinu nimetatud tööriistad: </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="soovitus">Millist programmeerimiskeelt sooviksid kõige rohkem õppida?</label>
+                <br>
+                <span class="viga" id="viga6">Vali keel!</span>
+            </td>
+            <td>
+                <select name="progSoovitus" id="soovitus" onchange="soovitusOpi()">
+                    <option value="vali">vali...</option>
+                    <option value="csharp">C#</option>
+                    <option value="python">Python</option>
+                    <option value="java">java</option>
+                    <option value="cpp">C++</option>
+                    <option value="c">C</option>
+                    <option value="typescript">TypeScript</option>
+                </select>
+            </td>
+            <td>
+                <div id="vastus6">Sinu valik: </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <!-- onclick eemaldatud: naitaKoikee() kutsutakse valideerimise järel -->
+                <input type="button" id="submits" value="Saada">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="reset" id="resets" value="Puhasta" onclick="puhastaa()">
+            </td>
+        </tr>
+    </table>
+    <br>
+</form>
+
+<script>
+    $(function () {
+        $('.viga').hide();
+
+        $('#kusitlus').on('reset', function () {
+            $('.viga').hide();
+        });
+
+        $('#submits').click(function () {
+            let valid = true;
+
+            // 1. Checkbox
+            if ($('input[name="lemmikud"]:checked').length === 0) {
+                $('#viga1').show(); valid = false;
+            } else { $('#viga1').hide(); }
+            // 2. Textarea
+            if ($('#arvamus').val().trim() === "") {
+                $('#viga2').show(); valid = false;
+            } else { $('#viga2').hide(); }
+
+            // 3. Number (0–24)
+            let tunnid = Number($('#tund').val());
+            if (isNaN(tunnid) || tunnid < 0 || tunnid > 168) {
+                $('#viga3').show(); valid = false;
+            } else { $('#viga3').hide(); }
+
+            // 4. Radio
+            if ($('input[name="valiku"]:checked').length === 0) {
+                $('#viga4').show(); valid = false;
+            } else { $('#viga4').hide(); }
+
+            // 5. Text (ainult tähed)
+            let tekst = $('#progTooristu').val().trim();
+            if (tekst === "" || !/^[a-zA-ZõäöüšžÕÄÖÜŠŽ\s]+$/.test(tekst)) {
+                $('#viga5').show(); valid = false;
+            } else { $('#viga5').hide(); }
+
+            // 6. Select
+            if ($('#soovitus').val() === "vali") {
+                $('#viga6').show(); valid = false;
+            } else { $('#viga6').hide(); }
+
+            if(!valid){
+                event.preventDefault();
+            } else {
+                alert("Vorm on edukalt saadetud!");
+
+            }
+        });
+    });
+</script>
+</body>
+</html>
